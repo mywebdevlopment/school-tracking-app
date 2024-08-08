@@ -9,6 +9,8 @@ function Header() {
         <li><Link to="/" className="text-white">Home</Link></li>
         <li><Link to="/admin" className="text-white">Admin</Link></li>
         <li><Link to="/parent" className="text-white">Parent</Link></li>
+        <li><Link to="/login" className="text-white">login</Link></li>
+        <li><Link to="/register" className="text-white">register</Link></li>
       </ul>
     </nav>
   );
