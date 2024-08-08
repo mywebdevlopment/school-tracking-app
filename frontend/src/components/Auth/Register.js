@@ -1,6 +1,6 @@
 // src/components/Auth/Register.js
 import React, { useState } from 'react';
-import axios from '../axios';
+import axios from 'C:/Users/pavsu/trackingapp/school-tracking-app/frontend/src/axios.js'
 
 function Register() {
   const [name, setName] = useState('');
