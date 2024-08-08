@@ -7,6 +7,7 @@ function Register() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
+  const [success, setSuccess] = useState('');
 
   const handleRegister = async (e) => {
     e.preventDefault();
@@ -18,9 +19,12 @@ function Register() {
         password,
       });
       console.log('Registration successful:', response.data);
+      setSuccess('Registration successful! You can now log in.');
+      setError('');  // Clear any previous errors
     } catch (err) {
       console.error('Error registering:', err);
       setError('Registration failed. Please try again.');
+      setSuccess('');  // Clear any previous success messages
     }
   };
 
@@ -28,6 +32,7 @@ function Register() {
     <div className="p-4 max-w-md mx-auto">
       <h2 className="text-2xl font-bold mb-4">Register</h2>
       {error && <div className="bg-red-100 text-red-700 p-2 mb-4 rounded">{error}</div>}
+      {success && <div className="bg-green-100 text-green-700 p-2 mb-4 rounded">{success}</div>}
       <form onSubmit={handleRegister} className="space-y-4">
         <div>
           <label htmlFor="name" className="block text-gray-700">Name</label>
@@ -36,7 +41,7 @@ function Register() {
             id="name"
             value={name}
             onChange={(e) => setName(e.target.value)}
-            className="w-full p-2 border rounded"
+            className="w-full p-2 border border-gray-300 rounded"
             required
           />
         </div>
@@ -47,7 +52,7 @@ function Register() {
             id="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="w-full p-2 border rounded"
+            className="w-full p-2 border border-gray-300 rounded"
             required
           />
         </div>
@@ -58,11 +63,11 @@ function Register() {
             id="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            className="w-full p-2 border rounded"
+            className="w-full p-2 border border-gray-300 rounded"
             required
           />
         </div>
-        <button type="submit" className="w-full bg-blue-500 text-white p-2 rounded">Register</button>
+        <button type="submit" className="w-full bg-blue-500 text-white p-2 rounded hover:bg-blue-600">Register</button>
       </form>
     </div>
   );
