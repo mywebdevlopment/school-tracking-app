@@ -1,4 +1,3 @@
-// src/context/ChildContext.js
 import React, { createContext, useState } from 'react';
 
 export const ChildContext = createContext();
