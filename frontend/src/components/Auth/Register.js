@@ -1,6 +1,6 @@
 // src/components/Auth/Register.js
 import React, { useState } from 'react';
-import axios from 'axios';
+import axios from '../axios';
 
 function Register() {
   const [name, setName] = useState('');
@@ -8,6 +8,7 @@ function Register() {
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
+  console.log("API URL:", process.env.REACT_APP_API_URL);
 
   const handleRegister = async (e) => {
     e.preventDefault();
