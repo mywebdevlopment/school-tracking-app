@@ -9,13 +9,13 @@ const auth = require('../middleware/authMiddleware');
 router.post('/', auth, addChild);
 
 // @route    GET api/children
-// @desc     Get all children for a parent
+// @desc     Get all children for the logged-in parent
 // @access   Private
 router.get('/', auth, getChildren);
 
-// @route    PUT api/children/:id
-// @desc     Update child's status (in/out of school)
+// @route    PUT api/children/:id/status
+// @desc     Update child's status (in school or not)
 // @access   Private
-router.put('/:id', auth, updateChildStatus);
+router.put('/:id/status', auth, updateChildStatus);
 
 module.exports = router;

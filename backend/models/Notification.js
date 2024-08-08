@@ -4,7 +4,6 @@ const NotificationSchema = new mongoose.Schema({
   child: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Child',
-    required: true,
   },
   message: {
     type: String,

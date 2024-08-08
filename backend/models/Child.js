@@ -12,7 +12,6 @@ const ChildSchema = new mongoose.Schema({
   parent: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'User',
-    required: true,
   },
   isInSchool: {
     type: Boolean,

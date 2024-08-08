@@ -4,7 +4,7 @@ const { getNotifications } = require('../controllers/notificationController');
 const auth = require('../middleware/authMiddleware');
 
 // @route    GET api/notifications/:childId
-// @desc     Get notifications for a child
+// @desc     Get notifications for a specific child
 // @access   Private
 router.get('/:childId', auth, getNotifications);
 
