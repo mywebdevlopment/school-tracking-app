@@ -11,6 +11,7 @@ import Register from './components/Auth/Register';
 import { AuthProvider } from './context/AuthContext';
 import { ChildProvider } from './context/ChildContext';
 
+
 function App() {
   return (
     <AuthProvider>
@@ -34,5 +35,6 @@ function App() {
     </AuthProvider>
   );
 }
+
 
 export default App;
