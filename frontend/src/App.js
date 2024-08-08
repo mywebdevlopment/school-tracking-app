@@ -1,4 +1,3 @@
-// src/App.js
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from './pages/Home';
@@ -10,7 +9,6 @@ import Login from './components/Auth/Login';
 import Register from './components/Auth/Register';
 import { AuthProvider } from './context/AuthContext';
 import { ChildProvider } from './context/ChildContext';
-
 
 function App() {
   return (
@@ -35,6 +33,5 @@ function App() {
     </AuthProvider>
   );
 }
-
 
 export default App;
