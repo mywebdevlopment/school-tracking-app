@@ -15,8 +15,8 @@ function App() {
   return (
     <AuthProvider>
       <ChildProvider>
-        <Router>
-          <ErrorBoundary>
+        <ErrorBoundary>
+          <Router>
             <div className="min-h-screen flex flex-col">
               <Header />
               <main className="flex-grow">
@@ -30,8 +30,8 @@ function App() {
               </main>
               <Footer />
             </div>
-          </ErrorBoundary>
-        </Router>
+          </Router>
+        </ErrorBoundary>
       </ChildProvider>
     </AuthProvider>
   );

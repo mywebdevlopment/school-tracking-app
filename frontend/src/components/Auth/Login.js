@@ -35,21 +35,4 @@ const Login = () => {
               className="w-full px-4 py-2 border rounded-md focus:ring focus:ring-opacity-75 focus:ring-indigo-400"
             />
           </div>
-          <div className="space-y-1">
-            <label htmlFor="password" className="block text-sm font-medium">Password</label>
-            <input
-              type="password"
-              id="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              className="w-full px-4 py-2 border rounded-md focus:ring focus:ring-opacity-75 focus:ring-indigo-400"
-            />
-          </div>
-          <button type="submit" className="w-full py-2 font-medium text-white bg-indigo-600 rounded-md hover:bg-indigo-700">Login</button>
-        </form>
-      </div>
-    </div>
-  );
-};
-
-export default Login;
+          <div
