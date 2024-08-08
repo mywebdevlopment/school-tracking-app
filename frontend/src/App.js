@@ -16,15 +16,19 @@ function App() {
     <AuthProvider>
       <ChildProvider>
         <Router>
-          <Header />
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/admin" element={<Admin />} />
-            <Route path="/parent" element={<Parent />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/register" element={<Register />} />
-          </Routes>
-          <Footer />
+          <div className="min-h-screen flex flex-col">
+            <Header />
+            <main className="flex-grow">
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/admin" element={<Admin />} />
+                <Route path="/parent" element={<Parent />} />
+                <Route path="/login" element={<Login />} />
+                <Route path="/register" element={<Register />} />
+              </Routes>
+            </main>
+            <Footer />
+          </div>
         </Router>
       </ChildProvider>
     </AuthProvider>
