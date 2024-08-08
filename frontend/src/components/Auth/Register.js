@@ -13,12 +13,11 @@ function Register() {
 
     try {
       const response = await axios.post(`${process.env.REACT_APP_API_URL}/api/auth/register`, {
-        name, // Include name in the payload if required by your backend
+        name,
         email,
         password,
       });
       console.log('Registration successful:', response.data);
-      // Optionally redirect or show a success message
     } catch (err) {
       console.error('Error registering:', err);
       setError('Registration failed. Please try again.');
