@@ -6,30 +6,21 @@ const Register = () => {
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
 
-  const handleRegister = async (e) => {
-    e.preventDefault();
+ const handleRegister = async (e) => {
+   e.preventDefault();
 
-    try {
-      const response = await axios.post(`${process.env.REACT_APP_API_URL}/api/auth/register`, {
-        email,
-        password,
-      });
-      console.log('Registration successful:', response.data);
-      // Handle successful registration (e.g., redirect to login)
-    } catch (err) {
-      console.error('Error registering:', err);
-      setError('Registration failed. Please try again.');
-      // More detailed error logging
-      if (err.response) {
-        console.error('Response error data:', err.response.data);
-        console.error('Response status:', err.response.status);
-      } else if (err.request) {
-        console.error('Request error:', err.request);
-      } else {
-        console.error('General error:', err.message);
-      }
-    }
-  };
+   try {
+     const response = await axios.post(`${process.env.REACT_APP_API_URL}/api/auth/register`, {
+       email,
+       password,
+     });
+     console.log('Registration successful:', response.data);
+   } catch (err) {
+     console.error('Error registering:', err);
+     setError('Registration failed. Please try again.');
+   }
+ };
+}
 
   return (
     <div className="flex items-center justify-center h-screen bg-gray-100">
