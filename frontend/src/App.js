@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import Home from './pages/Home';
 import Admin from './pages/Admin';
 import Parent from './pages/Parent';
@@ -16,21 +16,19 @@ function App() {
     <AuthProvider>
       <ChildProvider>
         <ErrorBoundary>
-          <Router>
-            <div className="min-h-screen flex flex-col">
-              <Header />
-              <main className="flex-grow">
-                <Routes>
-                  <Route path="/" element={<Home />} />
-                  <Route path="/admin" element={<Admin />} />
-                  <Route path="/parent" element={<Parent />} />
-                  <Route path="/login" element={<Login />} />
-                  <Route path="/register" element={<Register />} />
-                </Routes>
-              </main>
-              <Footer />
-            </div>
-          </Router>
+          <div className="min-h-screen flex flex-col">
+            <Header />
+            <main className="flex-grow">
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/admin" element={<Admin />} />
+                <Route path="/parent" element={<Parent />} />
+                <Route path="/login" element={<Login />} />
+                <Route path="/register" element={<Register />} />
+              </Routes>
+            </main>
+            <Footer />
+          </div>
         </ErrorBoundary>
       </ChildProvider>
     </AuthProvider>
