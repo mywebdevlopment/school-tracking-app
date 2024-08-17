@@ -6,6 +6,7 @@ const auth = require('../middleware/authMiddleware');
 // @route    POST api/auth/register
 // @desc     Register user
 // @access   Public
+
 router.post('/register', register);
 
 // @route    POST api/auth/login
