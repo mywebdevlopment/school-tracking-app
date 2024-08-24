@@ -81,6 +81,23 @@ app.post('/api/auth/register', async (req, res) => {
     res.status(500).json({ error: 'Server error' });
   }
 });
+// server.js or routes file
+
+app.get('/api/auth/user', (req, res) => {
+  // Logic to retrieve user data
+  res.json({ user: 'example' });
+});
+
+app.get('/api/auth/users', (req, res) => {
+  // Logic to retrieve all users
+  res.json({ users: ['user1', 'user2'] });
+});
+
+app.get('/api/auth/user/:id', (req, res) => {
+  const userId = req.params.id;
+  // Logic to retrieve user by ID
+  res.json({ userId: userId, user: 'example' });
+});
 
 
 
