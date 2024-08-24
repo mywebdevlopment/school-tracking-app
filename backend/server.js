@@ -14,6 +14,21 @@ connectDB();
 // Init Middleware
 app.use(express.json());
 app.use(cors());
+const mongoose = require('mongoose');
+
+const mongoURI = 'mongodb://localhost:27017/school-tracking-app';
+
+mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
+  .then(() => console.log('MongoDB connected successfully'))
+  .catch(err => console.log('MongoDB connection error:', err));
+require('dotenv').config();
+const mongoose = require('mongoose');
+
+const mongoURI = process.env.MONGO_URI;
+
+mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
+  .then(() => console.log('MongoDB connected successfully'))
+  .catch(err => console.log('MongoDB connection error:', err));
 
 // Define Routes
 app.use('/api/auth', require('./routes/authRoutes'));
