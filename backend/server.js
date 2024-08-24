@@ -28,7 +28,7 @@ app.use('/api/auth', require('./routes/authRoutes'));
 app.use('/api/children', require('./routes/childRoutes'));
 app.use('/api/notifications', require('./routes/notificationRoutes'));
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 5001;
 
 app.get('/', (req, res) => {
   res.send('Server is running');
