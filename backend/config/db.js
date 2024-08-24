@@ -3,7 +3,7 @@ const dotenv = require('dotenv');
 
 dotenv.config(); // Load environment variables
 
-console.log('Mongo URI:', process.env.MONGO_URI); // Add this line
+console.log('Mongo URI:', process.env.MONGO_URI); // Log the Mongo URI
 
 const connectDB = async () => {
   try {
