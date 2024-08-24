@@ -35,15 +35,15 @@ app.get('/', (req, res) => {
 });
 
 
-app.post('/api/auth/register', (req, res) => {
-  // Registration logic here
-    const { name, email, password } = req.body;
+app.post('/api/auth/register', async (req, res) => {
+  const { name, email, password } = req.body;
 
-    // Validate input
-    if (!name || !email || !password) {
-      return res.status(400).json({ error: 'All fields are required' });
-    }
+  // Validate input
+  if (!name || !email || !password) {
+    return res.status(400).json({ error: 'All fields are required' });
+  }
 
+  try {
     // Check for existing user
     const existingUser = await User.findOne({ email });
     if (existingUser) {
@@ -61,14 +61,11 @@ app.post('/api/auth/register', (req, res) => {
       password: hashedPassword,
     });
 
-    try {
-      await newUser.save();
-      res.status(201).json({ message: 'Registration successful' });
-    } catch (error) {
-      res.status(500).json({ error: 'Server error' });
-    }
-  });
-  res.send('Registration endpoint');
+    await newUser.save();
+    res.status(201).json({ message: 'Registration successful' });
+  } catch (error) {
+    res.status(500).json({ error: 'Server error' });
+  }
 });
 
 
