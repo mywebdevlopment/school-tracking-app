@@ -36,7 +36,40 @@ app.get('/', (req, res) => {
 
 
 app.post('/api/auth/register', (req, res) => {
+  // Registration logic here
+    const { name, email, password } = req.body;
+
+    // Validate input
+    if (!name || !email || !password) {
+      return res.status(400).json({ error: 'All fields are required' });
+    }
+
+    // Check for existing user
+    const existingUser = await User.findOne({ email });
+    if (existingUser) {
+      return res.status(400).json({ error: 'User already exists' });
+    }
+
+    // Hash the password
+    const salt = await bcrypt.genSalt(10);
+    const hashedPassword = await bcrypt.hash(password, salt);
+
+    // Create and save new user
+    const newUser = new User({
+      name,
+      email,
+      password: hashedPassword,
+    });
+
+    try {
+      await newUser.save();
+      res.status(201).json({ message: 'Registration successful' });
+    } catch (error) {
+      res.status(500).json({ error: 'Server error' });
+    }
+  });
   res.send('Registration endpoint');
 });
+
 
 app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
