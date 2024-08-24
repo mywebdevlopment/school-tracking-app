@@ -28,7 +28,7 @@ function Register() {
       setSuccess('Registration successful! You can now log in.');
       setError('');  // Clear any previous errors
     } catch (err) {
-      console.error('Error registering:', err);
+//      console.error('Error registering:', err);
       setError('Registration failed. Please try again.');
       setSuccess('');  // Clear any previous success messages
     }
