@@ -38,7 +38,6 @@ app.get('/', (req, res) => {
 app.post('/api/auth/register', async (req, res) => {
   const { name, email, password } = req.body;
 
-  // Validate input
   if (!name || !email || !password) {
     return res.status(400).json({ error: 'All fields are required' });
   }
@@ -64,9 +63,24 @@ app.post('/api/auth/register', async (req, res) => {
     await newUser.save();
     res.status(201).json({ message: 'Registration successful' });
   } catch (error) {
+    console.error('Error during registration:', error); // Log error
     res.status(500).json({ error: 'Server error' });
   }
 });
+app.post('/api/auth/register', async (req, res) => {
+  console.log('Request received:', req.body);
+
+  // Your existing code...
+
+  try {
+    // Your existing code...
+  } catch (error) {
+    console.error('Error during registration:', error);
+    res.status(500).json({ error: 'Server error' });
+  }
+});
+
+
 
 
 app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
