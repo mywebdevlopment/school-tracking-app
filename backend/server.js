@@ -26,6 +26,7 @@ app.get('/', (req, res) => {
   res.send('Server is running');
 });
 
+
 app.post('/api/auth/register', (req, res) => {
   res.send('Registration endpoint');
 });
