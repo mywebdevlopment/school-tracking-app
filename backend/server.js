@@ -23,7 +23,7 @@ const mongoURI = 'mongodb://localhost:27017/school-tracking-app';
 mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log('MongoDB connected successfully'))
   useNewUrlParser: true,
-  useUnifiedTopology: true
+  useUnifiedTopology: true;
   .catch(err => console.log('MongoDB connection error:', err));
 require('dotenv').config();
 
