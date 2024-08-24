@@ -1,6 +1,6 @@
 // src/components/Auth/Register.js
 import React, { useState } from 'react';
-import axios from 'C:/Users/pavsu/trackingapp/school-tracking-app/frontend/src/axios.js'
+import axios from 'axios';
 
 function Register() {
   const [name, setName] = useState('');
@@ -8,13 +8,18 @@ function Register() {
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
-  console.log("API URL:", process.env.REACT_APP_API_URL);
+
+  // This will use the environment variable if available, otherwise fall back to the default URL
+  const apiUrl = process.env.REACT_APP_API_URL || 'http://localhost:5000/api';
+
+  console.log("API URL:", apiUrl);
 
   const handleRegister = async (e) => {
     e.preventDefault();
 
     try {
-      const response = await axios.post(`${process.env.REACT_APP_API_URL}/api/auth/register`, {
+      // Use the `apiUrl` variable to construct the full endpoint URL
+      const response = await axios.post(`${apiUrl}/auth/register`, {
         name,
         email,
         password,
