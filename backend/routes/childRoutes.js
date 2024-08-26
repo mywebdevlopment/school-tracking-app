@@ -18,4 +18,5 @@ router.get('/', auth, getChildren);
 // @access   Private
 router.put('/:id/status', auth, updateChildStatus);
 
+
 module.exports = router;
