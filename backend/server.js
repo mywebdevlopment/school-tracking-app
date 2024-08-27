@@ -38,7 +38,6 @@ app.get('/', (req, res) => {
   res.send('Server is running');
 });
 
-
 app.post('/api/auth/register', async (req, res) => {
   const { name, email, password } = req.body;
 
