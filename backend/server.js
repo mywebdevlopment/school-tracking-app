@@ -73,6 +73,7 @@ app.post('/api/auth/register', async (req, res) => {
 app.post('/api/auth/register', async (req, res) => {
   console.log('Request received:', req.body);
 
+
   // Your existing code...
 
   try {
