@@ -90,6 +90,7 @@ app.get('/api/auth/user', (req, res) => {
   res.json({ user: 'example' });
 });
 
+
 app.get('/api/auth/users', (req, res) => {
   // Logic to retrieve all users
   res.json({ users: ['user1', 'user2'] });
