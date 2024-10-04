@@ -7,6 +7,7 @@ import ParentDashboard from '../components/Dashboard/ParentDashboard';
 function Parent() {
   return (
     <div>
+
       <ParentDashboard />
     </div>
   );
