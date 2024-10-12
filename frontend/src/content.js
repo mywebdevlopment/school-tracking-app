@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const data = Object.fromEntries(formData);
 
 
+
         try {
             const response = await fetch('/api/auth/register', {
                 method: 'POST',
